@@ -1,1 +1,5 @@
 flask
+pandas
+psycopg2
+sklearn
+imblearn
