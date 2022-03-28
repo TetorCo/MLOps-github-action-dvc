@@ -7,6 +7,6 @@ def testApp() {
 }
 
 def deployApp() {
-	echo 'deploying the applicaiton...'
+	echo 'deploying the applicaiton..'
 }
 return this

@@ -18,13 +18,6 @@ pipeline {
 				sh 'docker-compose build web'
 			}
 		}
-		stage("test") {
-			steps {
-				script {
-					gv.testApp()
-				}
-			}
-		}
 		stage("deploy") {
 			steps {
 				sh "docker-compose up -d"
