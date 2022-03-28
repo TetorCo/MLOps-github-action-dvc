@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                .accordion {
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: 0.4s;
+                }
+
+                .active, .accordion:hover {
+                background-color: #ccc; 
+                }
+
+                .panel {
+                padding: 0 18px;
+                display: none;
+                background-color: white;
+                overflow: hidden;
+                }
+            </style>
+    </head>
+        <title>EPL PFA 팀 예측</title>
+        <body>
+
+            <center>
+                <h1> EPL PFA Team 예측 </h1>
+                <h1> 간단한 정보로 예측해보자! </h1>
+                <img src="{{url_for('static', filename='image/epl_logo.png')}}"/>
+                <button class="accordion">공격수</button>
+                <div class="panel">
+                <form method="POST", action="{{url_for('fw_predict')}}">
+                <b>
+                출전한 리그 경기 수: <input type="number", name="출전한리그경기수", min="1", max="38"><br>
+                골 : <input type="number" name="골"><br>
+                도움 : <input type="number" name="도움"><br>
+                빅 찬스 미스 : <input type="number" name="빅찬스미스"><br>
+                </b>
+                    <input type="submit", value="예측">
+                </form>
+                </div>
+
+                <button class="accordion">미드필더</button>
+                <div class="panel">
+                <form method="POST", action="{{url_for('mf_predict')}}">
+                <b>
+                출전한 리그 경기 수: <input type="number", name="출전한리그경기수", min="1", max="38"><br>
+                골 : <input type="number" name="골"><br>
+                도움 : <input type="number" name="도움"><br>
+                기회 창출 : <input type="number" name="기회창출"><br>
+                </b>
+                    <input type="submit", value="예측">
+                </form>
+                </div>
+
+                <button class="accordion">수비수</button>
+                <div class="panel">
+                <form method="POST", action="{{url_for('df_predict')}}">
+                <b>
+                출전한 리그 경기 수: <input type="number" name="출전한리그경기수" min="1" max="38"><br>
+                슈팅을 막은 횟수 : <input type="number" name="슈팅을막은횟수"><br>
+                경기당 패스 횟수 : <input type="number" name="경기당패스횟수"><br>
+                패스 횟수 : <input type="number" name="패스횟수"><br>
+                </b>
+                    <input type="submit", value="예측">
+                </form>
+                </div>
+
+                <button class="accordion">골키퍼</button>
+                <div class="panel">
+                <form method="POST", action="{{url_for('gk_predict')}}">
+                <b>
+                출전한 리그 경기 수: <input type="number" name="출전한리그경기수" min="1" max="38"><br>
+                무실점 경기 횟수 : <input type="number" name="무실점"><br>
+                정확한 롱볼 횟수 : <input type="number" name="롱볼"><br>
+                자책골 : <input type="number" name="자책골"><br>
+                </b>
+                    <input type="submit", value="예측">
+                </form>
+                </div>
+            </center>
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+                
+                for (i = 0; i < acc.length; i++) {
+                  acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                      panel.style.display = "none";
+                    } else {
+                      panel.style.display = "block";
+                    }
+                  });
+                }
+            </script>
+        </body>
+</html>

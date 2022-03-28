@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <center>
+            <br><br><br><br><br>
+            <h1> 결과 : </h1>
+
+        {% if data == 0 %}
+        <img src="{{url_for('static', filename='image/player2.png')}}"/>
+        <h2> 이 선수는 PFA Team에 선정되지 못했습니다. </h2>
+        {% elif data == 1 %}
+        <img src="{{url_for('static', filename='image/ball_player.png')}}"/>
+        <h2> 이 선수는 PFA Team에 선정되었습니다!!! </h2>
+        {% endif %}
+
+            <br><br><br>
+        <a href="/">시작 화면으로 돌아가기</a>
+        </center>
+    </body>
+</html>

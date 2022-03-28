@@ -1,13 +1,12 @@
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "MLOps"}
+from flask import Flask, render_template, request
+# from sklearn.preprocessing import Binarizer
+import pickle
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+app = Flask(__name__)
+model = None
+
+
+@app.route('/')
+def main():
+    return render_template('main.html')
