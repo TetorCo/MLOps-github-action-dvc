@@ -1,0 +1,18 @@
+stages:
+  process:
+    cmd: python train.py
+    deps:
+    - create_csv_with_dvc.py
+    - player_stats.csv
+    outs:
+    - dvc_players_stats.csv
+    train:
+      cmd: python train.py
+      deps:
+      - train.py
+      - data_processed.csv
+      outs:
+      - by_region.png
+      metrics:
+      - metrics.json:
+          cache: false
