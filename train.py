@@ -28,7 +28,7 @@ y_test = test[target]
 
 ads = ADASYN(random_state=7, n_neighbors=5)  # 데이터 불균형 때문에 ADASYN 사용
 X_train_ads, y_train_ads = ads.fit_resample(X_train, y_train)
-model = RandomForestClassifier(n_estimators=200, max_depth=100, random_state=7)
+model = RandomForestClassifier(n_estimators=300, max_depth=100, random_state=7)
 model.fit(X_train_ads, y_train_ads)
 
 
