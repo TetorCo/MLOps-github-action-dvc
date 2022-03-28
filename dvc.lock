@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  process:
+    cmd: python create_csv_with_dvc.py
+    deps:
+    - path: create_csv_with_dvc.py
+      md5: 5872807c373634183189f6f5a984a29d
+      size: 108
+    - path: player_stats.csv
+      md5: bc70fc29802746f81826dee979af3813
+      size: 254059
+    outs:
+    - path: dvc_players_stats.csv
+      md5: bc70fc29802746f81826dee979af3813
+      size: 259169

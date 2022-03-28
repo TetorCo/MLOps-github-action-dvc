@@ -1,18 +1,18 @@
 stages:
   process:
-    cmd: python train.py
+    cmd: python create_csv_with_dvc.py
     deps:
-    - create_csv_with_dvc.py
     - player_stats.csv
+    - create_csv_with_dvc.py
     outs:
     - dvc_players_stats.csv
-    train:
-      cmd: python train.py
-      deps:
-      - train.py
-      - data_processed.csv
-      outs:
-      - by_region.png
-      metrics:
-      - metrics.json:
-          cache: false
+  train:
+    cmd: python train.py
+    deps:
+    - train.py
+    - dvc_players_stats.csv
+    outs:
+    - feature_importance.png
+    metrics:
+    - metrics.json:
+        cache: false

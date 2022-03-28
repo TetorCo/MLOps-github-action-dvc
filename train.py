@@ -15,7 +15,7 @@ def eval_metircs(actual, pred):
     r2 = r2_score(actual, pred)
     return rmse, mae, r2
 
-df = pd.read_csv('player_stats.csv', index_col=0)
+df = pd.read_csv('dvc_players_stats.csv', index_col=0)
 train, test = train_test_split(df, test_size=0.2, random_state=7)
 target = 'PFA_Team'
 
