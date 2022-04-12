@@ -3,7 +3,7 @@
 * 제작 기간 : 2022-03-23 ~ 2022-03-28
 
 ## 프로젝트 기획 배경
-MLOps라는 분야에 관심이 있었고 기존에 만들었던 ML 모델도 있었기 때문에 MLOps의 전체적인 작업의 흐름을 이해하고자 시작한 프로젝트입니다.
+MLOps라는 분야에 관심이 있었고 기존에 만들었던 ML 모델을 활용해서 MLOps의 전체적인 작업의 흐름을 이해하고자 시작한 프로젝트입니다.
 
 ## First MLOps PipeLine
 ![final-mlops-pipeline](https://user-images.githubusercontent.com/76984534/160886227-91839fd4-913e-4727-a2b6-72fc77451f3e.png)
